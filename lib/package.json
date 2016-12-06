@@ -11,7 +11,8 @@
     "angular-route": "^1.5.9",
     "firebase": "^3.6.2",
     "grunt": "^1.0.1",
-    "materialize-css": "^0.97.8"
+    "materialize-css": "^0.97.8",
+    "mdi": "^1.7.22"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
