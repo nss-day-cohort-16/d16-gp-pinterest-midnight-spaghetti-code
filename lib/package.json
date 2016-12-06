@@ -9,6 +9,7 @@
     "angular-aria": "^1.5.9",
     "angular-material": "^1.1.1",
     "angular-route": "^1.5.9",
+    "firebase": "^3.6.2",
     "grunt": "^1.0.1",
     "materialize-css": "^0.97.8"
   },
