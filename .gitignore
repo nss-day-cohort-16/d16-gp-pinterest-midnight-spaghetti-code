@@ -4,4 +4,4 @@
 *.css.map
 lib/node_modules
 dist/
-app/values/
+app/values
