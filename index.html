@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-<body>
+  <head>
+    <link rel="stylesheet" href="lib/node_modules/angular-material/angular-material.css">
+    <link href="lib/node_modules/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Pinterest MVP</title>
+  </head>
+  <body>
 
-	<script src=""></script>
+    <!-- navbar -->
+    <div ng-include="partials/nav-bar.html" ng-controller="NavBarCtrl" ng-show="showNav"></div>
 
-</body>
+    <!-- injection point -->
+    <div ng-view></div>
+
+    <!-- angular and directives -->
+    <script type="text/javascript" src="lib/node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/node_modules/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="lib/node_modules/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="lib/node_modules/angular-material/angular-material.js"></script>
+
+    <!-- app dependencies -->
+    <script type="text/javascript" src="app/app.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/firebase/firebase.js"></script>
+
+    <!-- factories -->
+    <script type="text/javascript" src="app/factories/AuthFactory.js"></script>
+    <script type="text/javascript" src="app/factories/DataFactory.js"></script>
+
+    <!-- controllers -->
+    <script src="app/controllers/NavBarCtrl.js"></script>
+    <script src="app/controllers/AddBoardCtrl.js"></script>
+    <script src="app/controllers/AddPinCtrl.js"></script>
+    <script src="app/controllers/LoginCtrl.js"></script>
+    <script src="app/controllers/ViewBoardCtrl.js"></script>
+
+  </body>
 </html>
