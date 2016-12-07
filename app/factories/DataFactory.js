@@ -66,7 +66,6 @@ app.factory("DataFactory", ($http, $q, FBCreds, AuthFactory) =>  {
       .success( (ObjFromFirebase) => {
         newBoard.uid = AuthFactory.getUser();
         let newBoardId = ObjFromFirebase.name;
-        // newBoard.boardid = newBoardId;
         $http.put(`${FBCreds.URL}/boards/${newBoardId}.json`, newBoard);
         resolve(ObjFromFirebase);
       })
@@ -80,9 +79,9 @@ app.factory("DataFactory", ($http, $q, FBCreds, AuthFactory) =>  {
     return $q( (resolve, reject) => {
       $http.post(`${FBCreds.URL}/pins.json`, JSON.stringify(newPin))
       .success( (ObjFromFirebase) => {
+        newPin.uid = AuthFactory.getUser();
         let newPinId = ObjFromFirebase.name;
-        newPinId.pinId = newPinId;
-        $http.put(`${FBCreds.URL}/pin/${newPinId}.json`, newPin);
+        $http.put(`${FBCreds.URL}/pins/${newPinId}.json`, newPin);
         resolve(ObjFromFirebase);
       })
       .error( (error) => {
