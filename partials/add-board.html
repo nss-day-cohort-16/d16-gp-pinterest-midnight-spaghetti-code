@@ -3,9 +3,12 @@
   	<h1> You have already created your board. Go to View Board to see it!</h1>
   </div>
   <div ng-show="!hasBoard">
-	  <h2>Add a Board</h2>
-	  <label>Add a Title</label>
-	  <input type="text" autofucus="true" ng-model="newBoard.title">
-	  <button ng-click="createBoard()">Create Board</button>
+		<center>
+		<md-input-container>
+		<label>Board Name</label>
+		<input type="text" ng-model="newBoard.title" type="text">
+		</md-input-container><br>
+		<md-button class="md-raised md-primary" ng-click="createBoard()">Add Board</md-button>
+		</center>
 	</div>
 </section>
