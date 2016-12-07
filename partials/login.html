@@ -1,6 +1,29 @@
-<section class="auth-form">
-  <h2>Login or Register</h2>
-  <div>
-    <button class="btn btn-info" ng-click="login()">Login</button>
+<div layout="row">
+  <div flex="33" flex-offset="33">
+    <md-button ui-sref="boards">Go to Boards</md-button>
+    <md-content class="md-padding">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="login">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Login</h1>
+            <md-button class="md-raised md-warn" ng-click="login()">Login With Google</md-button>
+          </md-content>
+        </md-tab>
+        <md-tab label="register">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Register</h1>
+            <md-input-container>
+              <label>Email</label>
+              <input ng-model="vm.email" type="text">
+            </md-input-container>
+            <md-input-container>
+              <label>Password</label>
+              <input type="password" ng-model="vm.password" type="text">
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-click="vm.createUser()">Register</md-button>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
   </div>
-  </section>
+</div>
