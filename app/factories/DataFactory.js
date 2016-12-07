@@ -46,7 +46,8 @@ app.factory("DataFactory", ($http, $q, FBCreds, AuthFactory) =>  {
   let getBoards = () => {
     let boards = [];
     return $q( (resolve, reject) => {
-      $http.get(`${FBCreds.URL}/boards.json?orderBy="uid"&equalTo="${AuthFactory.AuthObject.getUser()}"`)
+      console.log(`${FBCreds.URL}/boards.json?orderBy="uid"&equalTo="${AuthFactory.getUser()}"`);
+      $http.get(`${FBCreds.URL}/boards.json?orderBy="uid"&equalTo="${AuthFactory.getUser()}"`)
       .success( (boardsObj) => {
         Object.keys(boardsObj).forEach(function(key) {
           boards.push(boardsObj[key]);

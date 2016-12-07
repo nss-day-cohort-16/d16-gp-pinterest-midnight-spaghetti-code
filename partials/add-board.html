@@ -1,6 +1,11 @@
 <section class="board-form">
-  <h2>Add a Board</h2>
-  <label>Add a Title</label>
-  <input type="text" autofucus="true" ng-model="newBoard.title">
-  <button ng-click="createBoard()">Create Board</button>
+  <div ng-show="hasBoard">
+  	<h1> You have already created your board. Go to View Board to see it!</h1>
+  </div>
+  <div ng-show="!hasBoard">
+	  <h2>Add a Board</h2>
+	  <label>Add a Title</label>
+	  <input type="text" autofucus="true" ng-model="newBoard.title">
+	  <button ng-click="createBoard()">Create Board</button>
+	</div>
 </section>
