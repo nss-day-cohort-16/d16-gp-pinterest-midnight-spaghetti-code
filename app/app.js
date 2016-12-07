@@ -40,8 +40,9 @@ app.config(function($routeProvider, $mdThemingProvider) {
 
 app.run( ($location, FBCreds) => {
   let creds = FBCreds;
+  console.log("creds", creds);
   let authConfig = {
-    apiKey: creds.key,
+    apiKey: creds.apiKey,
     authDomain: creds.authDomain
   };
   firebase.initializeApp(authConfig);
