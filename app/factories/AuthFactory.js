@@ -8,12 +8,13 @@ app.factory("AuthFactory", function() {
 	let AuthObject = {
 		loginUser(userObj) {
 			currentUser = null;
-	    return firebase.auth().signInWithPopup(provider); 
+	    return firebase.auth().signInWithPopup(provider);
 		},
 		logoutUser(userObj) {
 			return firebase.auth().signOut();
 		},
 		isAuthenticated() {
+			console.log("isAuthenticated runs");
 			return new Promise((resolve, reject) => {
 				firebase.auth().onAuthStateChanged((user) => {
 					if (user) {
