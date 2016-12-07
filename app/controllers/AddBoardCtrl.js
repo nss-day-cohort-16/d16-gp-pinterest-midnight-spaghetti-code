@@ -6,6 +6,6 @@ app.controller('AddBoardCtrl', function($scope, $window, DataFactory) {
   $scope.createBoard = function() {
     DataFactory.addBoard($scope.newBoard);
     $scope.newBoard = {}; // clear new board form
-    $window.location.href = '/view'; // send user to view
+    $window.location.href = '/#/view'; // send user to view
   };
 });
