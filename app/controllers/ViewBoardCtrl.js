@@ -1,20 +1,19 @@
 "use strict";
 
 app.controller("ViewBoardCtrl", function($scope, DataFactory) {
-	$scope.hasPins = false;
-	$scope.pins = [];
+    $scope.hasPins = false;
+    $scope.pins = [];
 
-console.log("about to get boards");
-	DataFactory.getBoards()
-	  .then((data) => {
-	  	$scope.boardname = data.title;
-	  	DataFactory.getPins()
-	  	.then((data) => {
-	  		$scope.pins = data;
-	  		if ($scope.pins.length > 0)
-	  			$scope.hasPins = true;
-	  		else
-	  			$scope.hasPins = false;
-	  	});
-	  });
+    DataFactory.getBoards()
+        .then((data) => {
+            $scope.boardname = data.title;
+            DataFactory.getPins()
+                .then((data) => {
+                    $scope.pins = data;
+                    if ($scope.pins.length > 0)
+                        $scope.hasPins = true;
+                    else
+                        $scope.hasPins = false;
+                });
+        });
 });

@@ -1,13 +1,13 @@
 "use strict";
 
 app.controller('AddPinCtrl', function($scope, $window, DataFactory) {
-  $scope.newPin = {};
+    $scope.newPin = {};
 
-  $scope.createPin = function() {
-    DataFactory.addPin($scope.newPin)
-    	.then(() => {
-	   		$scope.newPin = {}; // clear new pin form
-  		  $window.location.href = '/#/view'; // send user to view
-    	});
-  };
+    $scope.createPin = function() {
+        DataFactory.addPin($scope.newPin)
+            .then(() => {
+                $scope.newPin = {}; // clear new pin form
+                $window.location.href = '/#/view'; // send user to view
+            });
+    };
 });
