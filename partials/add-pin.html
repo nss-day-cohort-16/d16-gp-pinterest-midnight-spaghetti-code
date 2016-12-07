@@ -1,10 +1,13 @@
-<section class="pin-form">
+<section class="board-form">
+
   <h2>Add a Pin</h2>
-  <div>
-    Title: <input type="text" autofucus="true" ng-model=""> 
-    Image link: <input type="text" autofucus="true" ng-model="">
-  </div>
-  <div>
-    <button class="btn btn-info" ng-click="addPin()">Add Pin</button>
-  </div>
-  </section>
+
+  <label>Add a Pin Title</label>
+  <input type="text" autofucus="true" ng-model="newBoard.title">
+
+  <label>Add an Image URL</label>
+  <input type="text" autofucus="true" ng-model="newBoard.url">
+
+  <button ng-click="createPin()">Create New Pin</button>
+
+</section>
