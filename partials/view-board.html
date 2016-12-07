@@ -1,12 +1,14 @@
-<h2> Board Name </h2>
+<h2> {{ boardname }} </h2>
 <!-- Cards go under -->
 <md-content class="md-padding" layout="row" layout-wrap>
-	<md-card ng-repeat="pin in pins" flex="30">
-		<img ng-src="{{ pin.image }}" alt="">
+	<md-card ng-show="hasPins" ng-repeat="pin in pins" flex="30">
+		<img ng-src="{{ pin.url }}" alt="">
 		<md-card-content>
 			<h2 class="md-title">{{ pin.title }}</h2>
-			<h3>Monkey Scene</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex corporis ratione, fugiat similique veritatis voluptatem minima autem temporibus eos beatae deserunt praesentium maiores dolorum maxime ducimus recusandae deleniti reiciendis asperiores.</p>
 		</md-card-content>
+	</md-card>
+	<md-card ng-show="!hasPins">
+		<h1>You don't have any pins!</h1>
 	</md-card>
 </md-content>
