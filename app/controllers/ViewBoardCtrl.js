@@ -4,9 +4,10 @@ app.controller("ViewBoardCtrl", function($scope, DataFactory) {
 	$scope.hasPins = false;
 	$scope.pins = [];
 
+console.log("about to get boards");
 	DataFactory.getBoards()
 	  .then((data) => {
-	  	$scope.boardname = data.name;
+	  	$scope.boardname = data.title;
 	  	DataFactory.getPins()
 	  	.then((data) => {
 	  		$scope.pins = data;
@@ -14,7 +15,6 @@ app.controller("ViewBoardCtrl", function($scope, DataFactory) {
 	  			$scope.hasPins = true;
 	  		else
 	  			$scope.hasPins = false;
-	  		$scope.$apply();
-	  	})
+	  	});
 	  });
 });
