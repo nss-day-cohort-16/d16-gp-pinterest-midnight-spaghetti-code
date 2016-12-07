@@ -2,7 +2,7 @@
 
 var app = angular.module("PinterestApp", ["ngRoute", "ngMaterial"]);
 
-let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
+let isAuth = (AuthFactory, $q) => $q( (resolve, reject) => {
   AuthFactory.isAuthenticated()
   .then( (userExists) => {
     if(userExists) {
