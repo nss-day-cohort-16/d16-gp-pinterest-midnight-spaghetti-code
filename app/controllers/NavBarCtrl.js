@@ -2,14 +2,19 @@
 
 app.controller("NavBarCtrl", function($scope, $window, AuthFactory){
 
-	$scope.loggedIn = false;
-
-	let NavBarObj = {
-		logout() {
-			AuthFactory.logoutUser(AuthFactory.getUser());
-			$window.location.href = "#/login";
+	firebase.auth().onAuthStateChanged((user) => {
+		if (user) {
+			$scope.loggedIn = true;
+		} else {
+			$scope.loggedIn = false;
 		}
+		$scope.$apply();
+	});
+
+	$scope.logout = function() {
+		console.log("logging out");
+		AuthFactory.logoutUser(AuthFactory.getUser());
+		$window.location.href = "#/login";
 	};
 
-	return NavBarObj;
 });
