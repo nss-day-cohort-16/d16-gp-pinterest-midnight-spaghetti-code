@@ -21,15 +21,18 @@ app.config(function($routeProvider, $mdThemingProvider) {
   }).
   when('/board', {
     templateUrl: 'partials/add-board.html',
-    controller: 'AddBoardCtrl'
+    controller: 'AddBoardCtrl',
+    resolve: {isAuth}
   }).
   when('/pin', {
     templateUrl: 'partials/add-pin.html',
-    controller: 'AddPinCtrl'
+    controller: 'AddPinCtrl',
+    resolve: {isAuth}
   }).
   when('/view', {
     templateUrl: 'partials/view-board.html',
-    controller: 'ViewBoardCtrl'
+    controller: 'ViewBoardCtrl',
+    resolve: {isAuth}
   }).
   otherwise('/login');
   
