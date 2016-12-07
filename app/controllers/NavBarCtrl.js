@@ -1,11 +1,13 @@
 "use strict";
 
-app.controller("NavBarCtrl", function($scope){
-	$scope.showNav = false;
+app.controller("NavBarCtrl", function($scope, $window, AuthFactory){
+
+	$scope.loggedIn = false;
 
 	let NavBarObj = {
-		setShoWNav() {
-
+		logout() {
+			AuthFactory.logoutUser(AuthFactory.getUser());
+			$window.location.href = "#/login";
 		}
 	};
 
