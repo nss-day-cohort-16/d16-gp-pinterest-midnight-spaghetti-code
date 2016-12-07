@@ -1,24 +1,3 @@
-/*
- App
-  |
-  + users
-  |---+ -K84hddnjx9v
-  |   |--- uid: "github:jruhfiurnvuienciuwdn"
-  |   |--- name: "Abraham Ybrimovitz"
-  |
-  + pins
-  |---+ -K84hfurycvb
-  |   |--- uid: "github:jruhfiurnvuienciuwdn"
-  |   |--- boardid: "-K66hzzzyyyy"
-  |   |--- url: "http://www.imgur.com/9rufrniuvnfu2vnefui"
-  |   |--- title: "Ha ha, stupid gator"
-  |
-  + boards
-  |---+ -K66hzzzyyyy
-  |   |--- uid: "github:jruhfiurnvuienciuwdn"
-  |   |--- title: "Stupid animals"
- */
-
 "use strict";
 
 app.factory("DataFactory", ($http, $q, FBCreds, AuthFactory) =>  {
@@ -49,11 +28,7 @@ app.factory("DataFactory", ($http, $q, FBCreds, AuthFactory) =>  {
       .success( (boardsObj) => {
         console.log("boardsObj", boardsObj);
         currentBoardId = Object.keys(boardsObj)[0];
-        Object.keys(boardsObj).forEach(function(key) {
-          // boards.push(boardsObj[key]);
-        });
-        // console.log("boards: ", boards);
-        resolve (currentBoardId);
+        resolve (boardsObj);
       })
       .error( (error) => {
         reject(error);

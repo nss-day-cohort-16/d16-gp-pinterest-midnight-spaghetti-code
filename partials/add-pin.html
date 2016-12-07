@@ -1,14 +1,17 @@
+<center>
+	<md-input-container>
+		<label>Add Pin</label>
+		<input type="text" ng-model="newPin.title" type="text">
+	</md-input-container>
 
+	<br/>
 
-<center><md-input-container>
-              <label>Add Pin</label>
-              <input type="text" ng-model="newPin.title" type="text">
-              
-              </md-input-container>
-<br>
-              <md-input-container>
-              <label>Add Image Link</label>
-              <input type="text" ng-model="newPin.url" type="text">
-              
-            </md-input-container><br>
-            <md-button class="md-raised md-primary" ng-click="createPin()">Create New Pin</md-button></center>
+	<md-input-container>
+		<label>Add Image Link</label>
+		<input type="text" ng-model="newPin.url" type="text">
+	</md-input-container>
+
+	<br/>
+
+	<md-button class="md-raised md-primary" ng-click="createPin()">Create New Pin</md-button>
+</center>
