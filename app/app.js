@@ -31,7 +31,7 @@ app.config(function($routeProvider, $mdThemingProvider) {
     templateUrl: 'partials/view-board.html',
     controller: 'ViewBoardCtrl'
   }).
-  otherwise('/');
+  otherwise('/login');
   
   $mdThemingProvider.theme('default')
     .primaryPalette('teal')
