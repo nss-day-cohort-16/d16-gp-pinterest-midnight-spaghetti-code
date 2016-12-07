@@ -6,9 +6,6 @@ app.factory("AuthFactory", function() {
 			provider = new firebase.auth.GoogleAuthProvider();
 
 	let AuthObject = {
-		// createUser(userObj) {
-		// 	return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password);
-		// },
 		loginUser(userObj) {
 			currentUser = null;
 	    return firebase.auth().signInWithPopup(provider); 
