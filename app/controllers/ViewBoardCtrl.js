@@ -2,11 +2,8 @@
 
 app.controller("ViewBoardCtrl", function($scope){
 
-	let ViewBoardObj = {
-		genericFunction() {
+		function genericFunction() {
 
 		}
-	};
 
-	return ViewBoardObj;
 });
