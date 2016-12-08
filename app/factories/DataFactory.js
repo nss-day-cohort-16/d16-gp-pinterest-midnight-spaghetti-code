@@ -40,6 +40,7 @@ app.factory("DataFactory", ($http, $q, FBCreds, AuthFactory) => {
                 .success((ObjFromFirebase) => {
                     newBoard.uid = AuthFactory.getUser();
                     let newBoardId = ObjFromFirebase.name;
+                    let currentBoardId = newBoardId;
                     $http.put(`${FBCreds.URL}/boards/${newBoardId}.json`, newBoard);
                     resolve(ObjFromFirebase);
                 })
